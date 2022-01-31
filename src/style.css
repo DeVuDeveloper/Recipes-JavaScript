@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+  }
+  
+  a {
+    text-decoration: none;
+    color: unset;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  
+  }
+  
+  .navbar li {
+    font-size: 20px;
+  }
+  
+  .navbar u {
+    font-weight: bold;
+  }
+  
+  nav img {
+    width: 150px;
+    height: 150px;
+  }
+  
