@@ -26,7 +26,7 @@ const list = (meals) => {
     mealTitle.appendChild(heart);
     const likes = document.createElement('li');
     likes.classList.add('likeCounter');
-    likes.innerHTML = `O likes`;
+    likes.innerHTML = 'O likes';
     ul.appendChild(likes);
     const commentBtn = document.createElement('li');
     ul.appendChild(commentBtn);
