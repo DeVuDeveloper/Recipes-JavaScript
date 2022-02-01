@@ -1,6 +1,6 @@
 import './style.css';
-import list from './modules/displayItems';
-import getDataFromAPI from './modules/getDataFromAPI';
+import list from './modules/displayItems.js';
+import getDataFromAPI from './modules/getDataFromAPI.js';
 
 const Footer = () => {
   const footer = document.querySelector('footer');
@@ -15,15 +15,5 @@ const Footer = () => {
 Footer();
 
 window.onload = async () => {
-list(await getDataFromAPI());
+  list(await getDataFromAPI());
 };
-
-  
-
-  
-
-
-
- 
- 
-

@@ -50,8 +50,7 @@ body::after {
 }
 
 .cards {
-  margin-bottom: 50px;
-  margin: 20px auto;
+  margin: 50px auto;
 }
 
 .image {
@@ -66,8 +65,6 @@ body::after {
   border: 1px solid black;
   padding: 3px;
 }
-
-
 
 .flex-li {
   display: flex;
