@@ -45,8 +45,10 @@ const list = async (meals) => {
         }
       });
     };
-    showLikes(btn, await getLikeFromAPI(), likes);
+   
   });
+  const likesData = await getLikeFromAPI()
+   showLikes(btn,likesData, likes);
 };
 
 export default list;
