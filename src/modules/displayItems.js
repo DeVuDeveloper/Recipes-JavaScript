@@ -1,4 +1,6 @@
-const list = (meals) => {
+import getLikeFromAPI from './getLikesFromAPI.js';
+
+const list = async (meals) => {
   const mealsContainer = document.querySelector('.cards-wrapper');
 
   meals.forEach((meal) => {
@@ -23,7 +25,7 @@ const list = (meals) => {
     const heart = document.createElement('i');
     heart.classList.add('far', 'fa-heart', 'like');
     heart.id = meal.idMeal;
-    mealTitle.appendChild(heart);
+    // mealTitle.appendChild(heart);
     const likes = document.createElement('li');
     likes.classList.add('likeCounter');
     likes.innerHTML = 'O likes';
@@ -37,6 +39,20 @@ const list = (meals) => {
     anchor.text = 'Comments';
     commentBtn.appendChild(anchor);
   });
+  
+ 
+  const showLikes = (btn, likesData, likes) => {
+  
+    likesData.forEach((meal) => {
+      if (meal.item_id === btn.id) {
+        likes.innerHTML = `${meal.likes} likes `;
+      }
+    });
+    
+ };
+  
+  showLikes(btn, await getLikeFromAPI(), likes);
+  
 };
 
 export default list;
