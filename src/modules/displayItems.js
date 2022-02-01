@@ -1,4 +1,4 @@
-const list = (meals) => {
+const list = async (meals) => {
   const mealsContainer = document.querySelector('.cards-wrapper');
 
   meals.forEach((meal) => {
