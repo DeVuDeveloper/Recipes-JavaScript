@@ -38,8 +38,7 @@ const list = async (meals) => {
     anchor.href = '#';
     anchor.text = 'Comments';
     commentBtn.appendChild(anchor);
-
- });
+  });
   const showLikes = (heart, likesData, likes) => {
     likesData.forEach((meal) => {
       if (meal.item_id === heart.id) {
@@ -47,8 +46,9 @@ const list = async (meals) => {
       }
     });
   };
-  const likesData = await getLikeFromAPI()
-  showLikes(btn,likesData, likes);
+  const likes = document.querySelector('.likeCounter');
+  const likesData = await getLikeFromAPI();
+  showLikes(heart, likesData, likes);
 };
 
 export default list;
