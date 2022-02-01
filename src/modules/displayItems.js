@@ -46,7 +46,8 @@ const list = async (meals) => {
       }
     });
   };
-  const likes = document.querySelector('.likeCounter');
+  const heart = document.querySelector('.likeCounter');
+  const likes = document.querySelector('.like');
   const likesData = await getLikeFromAPI();
   showLikes(heart, likesData, likes);
 };
