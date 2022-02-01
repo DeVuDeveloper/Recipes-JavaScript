@@ -1,4 +1,7 @@
 import './style.css';
+import list from './modules/displayItems.js';
+import getLikeFromAPI from './modules/getDataFromAPI.js';
+import popUpContainer from './modules/pop-up.js';
 
 const Footer = () => {
   const footer = document.querySelector('footer');
@@ -11,3 +14,7 @@ const Footer = () => {
 };
 
 Footer();
+
+window.onload = async () => {
+  list(await getLikeFromAPI());
+};
