@@ -1,4 +1,5 @@
 import './style.css';
+import mealsContainer from './modules/displayItems';
 
 const Footer = () => {
   const footer = document.querySelector('footer');
@@ -11,3 +12,13 @@ const Footer = () => {
 };
 
 Footer();
+
+  
+
+  
+
+
+
+ 
+ 
+
