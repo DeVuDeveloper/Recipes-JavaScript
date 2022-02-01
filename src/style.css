@@ -76,6 +76,90 @@ body::after {
   cursor: pointer;
 }
 
+.pop-up-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80vw;
+  border: 2px #000 solid;
+  box-sizing: border-box;
+  margin-top: 50px;
+}
+
+.pop-up {
+  text-align: center;
+}
+
+.span-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.id-text {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+.id-text li {
+  text-align: left;
+  margin-right: 50px;
+  align-items: flex-start;
+}
+
+.two li {
+  margin-right: 0;
+}
+
+.meal-image {
+  height: 400px;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.close-button {
+  float: right;
+  margin-right: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  border: none;
+  background-color: #fff;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+input {
+  width: 200px;
+  border: 2px #000 solid;
+  height: 30px;
+  padding-left: 10px;
+}
+
+textarea {
+  border: 2px #000 solid;
+  padding-left: 10px;
+}
+
+::placeholder {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.comment-btn {
+  padding: 5px;
+  box-shadow: 5px 5px #000;
+  margin-bottom: 20px;
+  font-size: 20px;
+  border: 2px #000 solid;
+  width: 150px;
+}
 
 footer::after {
   content: '';
