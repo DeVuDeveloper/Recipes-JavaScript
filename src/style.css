@@ -1,36 +1,111 @@
 * {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    box-sizing: border-box;
-  }
-  
-  body {
-    height: 100vh;
-  }
-  
-  a {
-    text-decoration: none;
-    color: unset;
-  }
-  
-  .navbar {
-    display: flex;
-    justify-content: space-evenly;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  min-height: 95vh;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.navbar li {
+  font-size: 20px;
+}
+
+.navbar u {
+  font-weight: bold;
+}
+
+nav img {
+  width: 150px;
+  height: 150px;
+}
+
+body::after {
+  content: '';
+  display: block;
+  height: 50px;
+}
+
+.cards-wrapper {
+  display: grid;
+  align-self: center;
+  text-align: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.cards {
+  margin: 50px auto;
+}
+
+.image {
+  width: 200px;
+}
+
+.cards li {
+  padding: 6px;
+}
+
+.comments-btn {
+  border: 1px solid black;
+  padding: 3px;
+}
+
+.flex-li {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 2px;
+}
+
+.like {
+  cursor: pointer;
+}
+
+footer::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 30px;
+  background-color: darkgray;
+  margin-top: 20px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  font-size: 22px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #000;
+  background-color: #fff;
+  font-weight: bold;
+  padding: 10px 0 10px 0;
+  text-align: center;
+}
+
+@media only screen and (min-width: 678px) {
+  .cards-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
-  
+    text-align: center;
+    padding: 0;
   }
-  
-  .navbar li {
-    font-size: 20px;
-  }
-  
-  .navbar u {
-    font-weight: bold;
-  }
-  
-  nav img {
-    width: 150px;
-    height: 150px;
-  }
-  
+}
