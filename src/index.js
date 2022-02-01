@@ -1,5 +1,6 @@
 import './style.css';
-import mealsContainer from './modules/displayItems';
+import list from './modules/displayItems';
+import getDataFromAPI from './modules/getDataFromAPI';
 
 const Footer = () => {
   const footer = document.querySelector('footer');
@@ -12,6 +13,10 @@ const Footer = () => {
 };
 
 Footer();
+
+window.onload = async () => {
+list(await getDataFromAPI());
+};
 
   
 
