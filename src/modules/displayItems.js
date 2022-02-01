@@ -1,5 +1,4 @@
 import getLikeFromAPI from './getLikesFromAPI.js';
-
 const list = async (meals) => {
   const mealsContainer = document.querySelector('.cards-wrapper');
 
