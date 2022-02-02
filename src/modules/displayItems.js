@@ -1,7 +1,7 @@
-import getInfo from './getInfo';
-import popUp from './pop-up';
-
+import getInfo from './getInfo.js';
+import popUp from './pop-up.js';
 import getLikeFromAPI from './getLikesFromAPI.js';
+
 const list = async (meals) => {
   const mealsContainer = document.querySelector('.cards-wrapper');
 

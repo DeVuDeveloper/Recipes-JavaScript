@@ -11,17 +11,16 @@ const setCommentsToAPI = async (mealId) => {
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
       },
-    }
+    },
   );
   return getComments;
 };
 
 const getCommentsFromAPI = async () => {
   const response = await fetch(
-    `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${involementKeys}/comments`
+    `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${involementKeys}/comments`,
   );
   const { result } = await response.json();
-  console.log(result);
   return result;
 };
 

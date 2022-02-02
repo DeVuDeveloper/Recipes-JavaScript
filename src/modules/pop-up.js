@@ -62,10 +62,9 @@ const popUp = async ([meal]) => {
     form.reset();
     const commentCount = (str) => {
       let counter = 0;
-      for (let i = 0; i < str.length; i++) {
+      for (let i = 0; i < str.length; i += 1) {
         if (str[i] > 0) {
-          counter++;
-          i++;
+          counter += 1;
         }
         return counter;
       }
