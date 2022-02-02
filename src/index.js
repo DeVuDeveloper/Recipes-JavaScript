@@ -2,6 +2,10 @@ import './style.css';
 import list from './modules/displayItems.js';
 import getDataFromAPI from './modules/getDataFromAPI.js';
 
+window.onload = async () => {
+  list(await getDataFromAPI());
+};
+
 const Footer = () => {
   const footer = document.querySelector('footer');
   const currentYear = new Date().getFullYear();
@@ -13,7 +17,3 @@ const Footer = () => {
 };
 
 Footer();
-
-window.onload = async () => {
-  list(await getDataFromAPI());
-};
