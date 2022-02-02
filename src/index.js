@@ -20,11 +20,6 @@ window.onload = async () => {
   list(await getLikeFromAPI());
 };
 
-const anchor = document.createElement('a');
-anchor.addEventListener('click', () => {
-  popUp(getInfo());
-});
-
 const mealsContainer = document.querySelector('.cards-wrapper');
 mealsContainer.onclick = async () => {
   popUp(await getInfo());

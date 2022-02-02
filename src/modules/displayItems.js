@@ -38,10 +38,11 @@ const list = async (meals) => {
     anchor.href = '#';
     anchor.text = 'Comments';
     commentBtn.appendChild(anchor);
+    const popUpContainer = document.querySelector('.pop-up-container');
+    anchor.addEventListener('click', () => {
+      popUpContainer.classList.add('pop');
+    });
   });
-
-  // const popUpContainer = document.querySelector('.pop-up-container');
-  // const button = document.querySelectorAll('.comments-btn');
 
   const showLikes = (heart, likesData, likes) => {
     likesData.forEach((meal) => {
