@@ -66,10 +66,10 @@ const popUp = async ([meal]) => {
         if (str[i] > 0) {
           counter += 1;
         }
-        return counter;
       }
+      return counter;
     };
-    commentCount();
+
     comment.innerText = commentCount(comments);
   });
 };

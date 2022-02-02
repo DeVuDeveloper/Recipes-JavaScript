@@ -143,7 +143,7 @@ const list = (meals) => {
     });
   });
 
-  numbersOfMeals.textContent = homepageCounter(meals);
+  // numbersOfMeals.textContent = homepageCounter(meals);
 };
 
 export default list;
