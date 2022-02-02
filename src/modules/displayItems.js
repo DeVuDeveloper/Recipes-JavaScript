@@ -1,7 +1,9 @@
 import { addLikeToAPI, getLikesFromAPI } from './likes.js';
+import homepageCounter from './homepageCounter.js';
 
 const mealsContainer = document.querySelector('.cards-wrapper');
-
+const numbersOfMeals= document.querySelector('.meals-number');
+ 
 const list = (meals) => {
   meals.forEach(async (meal) => {
     const ul = document.createElement('ul');
@@ -60,6 +62,8 @@ const list = (meals) => {
       showLikes(likeComing, likes);
     });
   });
+
+  numbersOfMeals.textContent = homepageCounter(meals);
 };
 
 export default list;
