@@ -49,7 +49,7 @@ const list = async (meals) => {
   });
 
   const likesData = await getLikesFromAPI();
-  const showLikes = (likesData, likes) => {
+  const showLikes = (likesData, heart, likes) => {
     likesData.forEach((meal) => {
       if (meal.item_id === heart.id) {
         likes.innerHTML = `${meal.likes} likes `;
