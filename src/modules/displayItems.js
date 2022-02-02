@@ -3,7 +3,7 @@ import { addLikeToAPI, getLikesFromAPI } from './likes.js';
 const mealsContainer = document.querySelector('.cards-wrapper');
 
 const list = (meals) => {
-  meals.forEach( async (meal) => {
+  meals.forEach(async (meal) => {
     const ul = document.createElement('ul');
     ul.id = meal.idMeal;
     ul.classList.add('cards');
