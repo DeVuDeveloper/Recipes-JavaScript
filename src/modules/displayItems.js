@@ -2,9 +2,8 @@ import { addLikeToAPI, getLikesFromAPI } from './likes.js';
 
 const mealsContainer = document.querySelector('.cards-wrapper');
 
-  const list = (meals) => {
-
-    meals.forEach( async (meal) => {
+const list = (meals) => {
+  meals.forEach( async (meal) => {
     const ul = document.createElement('ul');
     ul.id = meal.idMeal;
     ul.classList.add('cards');
@@ -48,18 +47,18 @@ const mealsContainer = document.querySelector('.cards-wrapper');
         }
       });
     };
-      showLikes(likesData, likes);
-  
-    heart.addEventListener('click', async() => {
+    showLikes(likesData, likes);
+
+    heart.addEventListener('click', async () => {
       await addLikeToAPI(heart.id);
       heart.style.color = 'red';
-      setTimeout( () => {
+      setTimeout(() => {
         heart.style.color = 'unset';
-   }, 2000)
-     
-    const likeComing = await getLikesFromAPI();
-      showLikes(likeComing , likes);
-    }); 
+      }, 2000);
+
+      const likeComing = await getLikesFromAPI();
+      showLikes(likeComing, likes);
+    });
   });
 };
 
