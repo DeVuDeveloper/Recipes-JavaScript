@@ -1,6 +1,8 @@
+
 import getInfo from './getInfo.js';
 import popUp from './pop-up.js';
 import getLikeFromAPI from './getLikesFromAPI.js';
+import { addLikeToAPI, getLikesFromAPI } from './likes.js';
 
 const list = async (meals) => {
   const mealsContainer = document.querySelector('.cards-wrapper');
@@ -39,6 +41,7 @@ const list = async (meals) => {
     anchor.text = 'Comments';
     commentBtn.appendChild(anchor);
 
+
     const popUpContainer = document.querySelector('.pop-up-container');
 
     anchor.addEventListener('click', async () => {
@@ -52,6 +55,26 @@ const list = async (meals) => {
       if (meal.item_id === heart.id) {
         likes.innerHTML = `${meal.likes} likes `;
       }
+
+    const likesData = await getLikesFromAPI();
+    const showLikes = (likesData, likes) => {
+      likesData.forEach((meal) => {
+        if (meal.item_id === heart.id) {
+          likes.innerHTML = `${meal.likes} likes `;
+        }
+      });
+    };
+    showLikes(likesData, likes);
+
+    heart.addEventListener('click', async () => {
+      await addLikeToAPI(heart.id);
+      heart.style.color = 'red';
+      setTimeout(() => {
+        heart.style.color = 'unset';
+      }, 2000);
+
+      const likeComing = await getLikesFromAPI();
+      showLikes(likeComing, likes);
     });
   };
   const heart = document.querySelector('.likeCounter');
