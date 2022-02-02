@@ -1,11 +1,14 @@
+
 import getInfo from './getInfo.js';
 import popUp from './pop-up.js';
 import getLikeFromAPI from './getLikesFromAPI.js';
+import { addLikeToAPI, getLikesFromAPI } from './likes.js';
 
-const list = async (meals) => {
-  const mealsContainer = document.querySelector('.cards-wrapper');
 
-  meals.forEach((meal) => {
+const mealsContainer = document.querySelector('.cards-wrapper');
+
+const list = (meals) => {
+  meals.forEach(async (meal) => {
     const ul = document.createElement('ul');
     ul.id = meal.idMeal;
     ul.classList.add('cards');
@@ -27,7 +30,7 @@ const list = async (meals) => {
     const heart = document.createElement('i');
     heart.classList.add('far', 'fa-heart', 'like');
     heart.id = meal.idMeal;
-    // mealTitle.appendChild(heart);
+    mealTitle.appendChild(heart);
     const likes = document.createElement('li');
     likes.classList.add('likeCounter');
     likes.innerHTML = 'O likes';
@@ -40,6 +43,7 @@ const list = async (meals) => {
     anchor.href = '#';
     anchor.text = 'Comments';
     commentBtn.appendChild(anchor);
+
 
     const popUpContainer = document.querySelector('.pop-up-container');
 
@@ -54,12 +58,28 @@ const list = async (meals) => {
       if (meal.item_id === heart.id) {
         likes.innerHTML = `${meal.likes} likes `;
       }
+
+    const likesData = await getLikesFromAPI();
+    const showLikes = (likesData, likes) => {
+      likesData.forEach((meal) => {
+        if (meal.item_id === heart.id) {
+          likes.innerHTML = `${meal.likes} likes `;
+        }
+      });
+    };
+    showLikes(likesData, likes);
+
+    heart.addEventListener('click', async () => {
+      await addLikeToAPI(heart.id);
+      heart.style.color = 'red';
+      setTimeout(() => {
+        heart.style.color = 'unset';
+      }, 2000);
+
+      const likeComing = await getLikesFromAPI();
+      showLikes(likeComing, likes);
     });
-  };
-  const heart = document.querySelector('.likeCounter');
-  const likes = document.querySelector('.like');
-  const likesData = await getLikeFromAPI();
-  showLikes(heart, likesData, likes);
+  });
 };
 
 export default list;
