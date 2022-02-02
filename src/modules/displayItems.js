@@ -54,7 +54,6 @@ const list = async (meals) => {
   const likes = document.querySelector('.like');
   const likesData = await getLikeFromAPI();
   showLikes(heart, likesData, likes);
-
 };
 
 export default list;
