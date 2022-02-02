@@ -69,6 +69,7 @@ const popUp = async ([meal]) => {
         return counter;
       }
     };
+    commentCount();
     comment.innerText = commentCount(comments);
   });
 };
