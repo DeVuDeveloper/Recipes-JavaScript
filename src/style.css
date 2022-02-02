@@ -77,12 +77,17 @@ body::after {
 }
 
 .pop-up-container {
+  display: none;
   margin-left: auto;
   margin-right: auto;
   width: 80vw;
   border: 2px #000 solid;
   box-sizing: border-box;
   margin-top: 50px;
+}
+
+.pop-up-container.pop {
+  display: grid;
 }
 
 .pop-up {

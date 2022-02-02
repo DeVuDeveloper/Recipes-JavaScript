@@ -37,8 +37,6 @@ const list = async (meals) => {
     anchor.text = 'Comments';
     commentBtn.appendChild(anchor);
   });
-  // const popUpContainer = document.querySelector('.pop-up-container');
-  // const button = document.querySelectorAll('.comments-btn');
 };
 
 export default list;

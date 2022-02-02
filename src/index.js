@@ -1,7 +1,8 @@
 import './style.css';
 import list from './modules/displayItems.js';
 import getLikeFromAPI from './modules/getDataFromAPI.js';
-// import popUpContainer from './modules/pop-up.js';
+import popUp from './modules/pop-up.js';
+import getInfo from './modules/getInfo.js';
 
 const Footer = () => {
   const footer = document.querySelector('footer');
@@ -17,4 +18,14 @@ Footer();
 
 window.onload = async () => {
   list(await getLikeFromAPI());
+};
+
+const anchor = document.createElement('a');
+anchor.addEventListener('click', () => {
+  popUp(getInfo());
+});
+
+const mealsContainer = document.querySelector('.cards-wrapper');
+mealsContainer.onclick = async () => {
+  popUp(await getInfo());
 };
