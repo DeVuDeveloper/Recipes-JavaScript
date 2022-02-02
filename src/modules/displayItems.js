@@ -1,3 +1,6 @@
+import getInfo from './getInfo';
+import popUp from './pop-up';
+
 import getLikeFromAPI from './getLikesFromAPI.js';
 import getCommentsFromAPI from './involvementkeys.js';
 const list = async (meals) => {
@@ -38,10 +41,12 @@ const list = async (meals) => {
     anchor.href = '#';
     anchor.text = 'Comments';
     commentBtn.appendChild(anchor);
+
     const popUpContainer = document.querySelector('.pop-up-container');
-    anchor.addEventListener('click', () => {
+
+    anchor.addEventListener('click', async () => {
       popUpContainer.classList.add('pop');
-      getCommentsFromAPI();
+      popUp(await getInfo(meal.idMeal));
     });
   });
 
