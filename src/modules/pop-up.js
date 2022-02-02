@@ -34,13 +34,15 @@ const popUp = async ([meal]) => {
   div.appendChild(commentText);
   const p = document.createElement('p');
   p.classList.add('p-comment');
-  p.innerText = 'Add a comment';
+  // p.innerText = 'Add a comment';
   div.appendChild(p);
   const form = document.createElement('form');
   const input = document.createElement('input');
   input.placeholder = 'Your name';
+  input.id = 'username';
   const textArea = document.createElement('textarea');
   textArea.placeholder = 'Your insight';
+  textArea.id = 'usercomment';
   form.appendChild(input);
   form.appendChild(textArea);
   const btn = document.createElement('button');
@@ -51,6 +53,23 @@ const popUp = async ([meal]) => {
 
   closeButton.addEventListener('click', () => {
     popUpContainer.classList.remove('pop');
+  });
+
+  btn.addEventListener('click', () => {
+    const comments = `${input.value} : ${textArea.value}`;
+    p.innerText = comments;
+    form.reset();
+    const commentCount = (str) => {
+      let counter = 0;
+      for (let i = 0; i < str.length; i++) {
+        if (str[i] > 0) {
+          counter++;
+          i++;
+        }
+        return counter;
+      }
+    };
+    comment.innerText = commentCount(comments);
   });
 };
 

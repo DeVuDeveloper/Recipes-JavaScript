@@ -1,5 +1,5 @@
 import getLikeFromAPI from './getLikesFromAPI.js';
-
+import getCommentsFromAPI from './involvementkeys.js';
 const list = async (meals) => {
   const mealsContainer = document.querySelector('.cards-wrapper');
 
@@ -41,6 +41,7 @@ const list = async (meals) => {
     const popUpContainer = document.querySelector('.pop-up-container');
     anchor.addEventListener('click', () => {
       popUpContainer.classList.add('pop');
+      getCommentsFromAPI();
     });
   });
 
