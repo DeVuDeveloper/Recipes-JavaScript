@@ -4,7 +4,6 @@ import getLikeFromAPI from './getLikesFromAPI.js';
 
 const list = async (meals) => {
   const mealsContainer = document.querySelector('.cards-wrapper');
-
   meals.forEach((meal) => {
     const ul = document.createElement('ul');
     ul.id = meal.idMeal;
@@ -27,7 +26,6 @@ const list = async (meals) => {
     const heart = document.createElement('i');
     heart.classList.add('far', 'fa-heart', 'like');
     heart.id = meal.idMeal;
-    // mealTitle.appendChild(heart);
     const likes = document.createElement('li');
     likes.classList.add('likeCounter');
     likes.innerHTML = 'O likes';
@@ -58,7 +56,7 @@ const list = async (meals) => {
   };
   const heart = document.querySelector('.likeCounter');
   const likes = document.querySelector('.like');
-  const likesData = await getLikeFromAPI();
+  const likesData = getLikeFromAPI();
   showLikes(heart, likesData, likes);
 };
 
