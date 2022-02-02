@@ -2,7 +2,6 @@ import getInfo from './getInfo';
 import popUp from './pop-up';
 
 import getLikeFromAPI from './getLikesFromAPI.js';
-import getCommentsFromAPI from './involvementkeys.js';
 const list = async (meals) => {
   const mealsContainer = document.querySelector('.cards-wrapper');
 

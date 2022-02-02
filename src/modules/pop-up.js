@@ -1,5 +1,6 @@
 const popUpContainer = document.querySelector('.pop-up-container');
 const popUp = async ([meal]) => {
+  popUpContainer.innerHTML = '';
   const div = document.createElement('div');
   div.id = 'some';
   div.classList.add('pop-up');
