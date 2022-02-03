@@ -86,7 +86,7 @@ const popUp = async ([meal]) => {
     addComment(element);
   });
 
-  await setCommentsToAPI(meal.idMeal, username, usercomment);
+  await setCommentsToAPI(meal.idMeal, meal.username, meal.usercomment);
 };
 
 export default popUp;
