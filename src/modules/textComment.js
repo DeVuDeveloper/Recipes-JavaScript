@@ -1,1 +1,0 @@
-import commentCounter from "./commentCounter";

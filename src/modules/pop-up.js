@@ -87,13 +87,12 @@ const popUp = async ([meal]) => {
     form.reset();
     await setCommentsToAPI(meal.idMeal, userName, userComment);
     const commentList = await getCommentsFromAPI(meal.idMeal);
-      commentList.forEach((element) => {
-    const counter = commentCounter(commentList);
+    commentList.forEach((element) => {
+      const counter = commentCounter(commentList);
       commentNumber.innerHTML = `Comments (${counter})`;
-     addComment(element);
+      addComment(element);
+    });
   });
-   });
-  };
+};
 
 export default popUp;
-
