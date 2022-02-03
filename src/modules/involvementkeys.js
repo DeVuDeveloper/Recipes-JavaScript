@@ -26,4 +26,4 @@ const getCommentsFromAPI = async (idMeal) => {
   return result;
 };
 
-export default { setCommentsToAPI, getCommentsFromAPI };
+export { setCommentsToAPI, getCommentsFromAPI };

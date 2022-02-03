@@ -1,4 +1,4 @@
-import setCommentsToAPI from './involvementkeys.js';
+import { setCommentsToAPI, getCommentsFromAPI } from './involvementkeys.js';
 
 const popUpContainer = document.querySelector('.pop-up-container');
 const popUp = async ([meal]) => {
@@ -65,28 +65,28 @@ const popUp = async ([meal]) => {
     popUpContainer.classList.remove('pop');
   });
 
+  const addComment = (el) => {
+    const comments = document.createElement('li');
+    comments.innerHTML = `<span>${el.creationDate}</span> ${el.username}: ${el.comment}`;
+    displayComments.appendChild(comments);
+  };
+
   btn.addEventListener('click', async () => {
     const date = new Date();
-    const creation_date = date.toISOString().split('T')[0];
+    const creationDate = date.toISOString().split('T')[0];
     const userName = input.value;
     const userComment = textArea.value;
-    addComment({ creation_date, comment: userComment, username: userName });
+    addComment({ creationDate, comment: userComment, username: userName });
     form.reset();
     await setCommentsToAPI(meal.idMeal, userName, userComment);
   });
-
-  const addComment = (el) => {
-    const comments = document.createElement('li');
-    comments.innerHTML = `<span>${el.creation_date}</span> ${el.username}: ${el.comment}`;
-    displayComments.appendChild(comments);
-  };
 
   const commentList = await getCommentsFromAPI(meal.idMeal);
   commentList.forEach((element) => {
     addComment(element);
   });
 
-  await setCommentsToAPI(meal.idMeal, userName, userComment);
+  await setCommentsToAPI(meal.idMeal, username, usercomment);
 };
 
 export default popUp;
