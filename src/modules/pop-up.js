@@ -26,7 +26,7 @@ const popUp = async ([meal]) => {
   const li2 = document.createElement('li');
   const li3 = document.createElement('li');
   li.innerText = `Category : ${meal.strCategory}`;
-  li2.innerText = `Area : ${meal.strArea}`;
+  li2.innerText = `Area : ${meal.idMeal}`;
   li3.innerText = `Recipe : ${meal.strInstructions}`;
   iDText.appendChild(li);
   iDText.appendChild(li2);
@@ -63,26 +63,20 @@ const popUp = async ([meal]) => {
   closeButton.addEventListener('click', () => {
     popUpContainer.classList.remove('pop');
   });
+
   const date = new Date();
 
-  btn.addEventListener('click', () => {
-    const comments = `${date.toLocaleDateString()}  ${input.value} : ${
-      textArea.value
-    }`;
+  btn.addEventListener('click', async () => {
+    const userName = input.value;
+    const userComment = textArea.value;
+
+    const comments = ` ${date.toLocaleDateString()}  ${
+      input.value
+    } : ${userComment}`;
     p.innerText = comments;
     form.reset();
-    setCommentsToAPI();
-    const commentCount = (str) => {
-      let counter = 0;
-      for (let i = 0; i < str.length; i += 1) {
-        if (str[i] > 0) {
-          counter += 1;
-        }
-      }
-      return counter;
-    };
 
-    comment.innerText = commentCount(comments, getCommentsFromAPI());
+    await setCommentsToAPI(meal.idMeal, userName, userComment);
   });
 };
 

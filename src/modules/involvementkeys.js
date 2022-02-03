@@ -1,28 +1,27 @@
-const involementKeys = 'AZ7zWk86jgEHTkrEg7LZ';
-
-const setCommentsToAPI = async (mealId, input, textArea) => {
-  const getComments = await fetch(
-    `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${involementKeys}/comments`,
+const setCommentsToAPI = async (idMeal, userName, userComment) => {
+  fetch(
+    'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/aJAP5QBjQIyOxK4oOV98/comments',
     {
       method: 'POST',
-      body: JSON.stringify({
-        item_id: mealId,
-        username: input.value,
-        comment: textArea.value,
-      }),
       headers: {
-        'Content-type': 'application/json; charset=UTF-8',
+        'Content-type': 'application/json',
       },
+      body: JSON.stringify({
+        item_id: idMeal,
+        username: userName,
+        comment: userComment,
+      }),
     }
-  );
-  return getComments;
+  )
+    .then((res) => res.ok)
+    .then((data) => data);
 };
 
-const getCommentsFromAPI = async () => {
+const getCommentsFromAPI = async (idMeal) => {
   const response = await fetch(
-    `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${involementKeys}/comments`
+    `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/aJAP5QBjQIyOxK4oOV98/comments?item_id='${idMeal}'`
   );
-  const { result } = await response.json();
+  const result = await response.json();
   return result;
 };
 
