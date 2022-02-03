@@ -21,8 +21,14 @@ const popUp = async ([meal]) => {
   const iDText = document.createElement('ul');
   iDText.classList.add('id-text');
   const li = document.createElement('li');
-  li.innerText = `${meal.idMeal} : ${meal.strMeal}`;
+  const li2 = document.createElement('li');
+  const li3 = document.createElement('li');
+  li.innerText = `Category : ${meal.strCategory}`;
+  li2.innerText = `Area : ${meal.strArea}`;
+  li3.innerText = `Recipe : ${meal.strInstructions}`;
   iDText.appendChild(li);
+  iDText.appendChild(li2);
+  iDText.appendChild(li3);
   spanDiv.appendChild(iDText);
   div.appendChild(spanDiv);
   const commentHeader = document.createElement('h3');
@@ -55,9 +61,12 @@ const popUp = async ([meal]) => {
   closeButton.addEventListener('click', () => {
     popUpContainer.classList.remove('pop');
   });
+  const date = new Date();
 
   btn.addEventListener('click', () => {
-    const comments = `${input.value} : ${textArea.value}`;
+    const comments = `${date.toLocaleDateString()}  ${input.value} : ${
+      textArea.value
+    }`;
     p.innerText = comments;
     form.reset();
     const commentCount = (str) => {
