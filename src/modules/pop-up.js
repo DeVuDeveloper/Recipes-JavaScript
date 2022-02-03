@@ -1,3 +1,5 @@
+import { setCommentsToAPI, getCommentsFromAPI } from './involvementkeys.js';
+
 const popUpContainer = document.querySelector('.pop-up-container');
 const popUp = async ([meal]) => {
   popUpContainer.innerHTML = '';
@@ -69,6 +71,7 @@ const popUp = async ([meal]) => {
     }`;
     p.innerText = comments;
     form.reset();
+    setCommentsToAPI();
     const commentCount = (str) => {
       let counter = 0;
       for (let i = 0; i < str.length; i += 1) {
@@ -79,7 +82,7 @@ const popUp = async ([meal]) => {
       return counter;
     };
 
-    comment.innerText = commentCount(comments);
+    comment.innerText = commentCount(comments, getCommentsFromAPI());
   });
 };
 
