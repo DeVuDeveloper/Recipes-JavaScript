@@ -1,4 +1,5 @@
 import { setCommentsToAPI, getCommentsFromAPI } from './involvementkeys.js';
+import commentCounter from './commentCounter.js';
 
 const popUpContainer = document.querySelector('.pop-up-container');
 const popUp = async ([meal]) => {
@@ -36,12 +37,11 @@ const popUp = async ([meal]) => {
   const commentHeader = document.createElement('h3');
   commentHeader.innerText = 'Comments';
   const commentText = document.createElement('ul');
-  const comment = document.createElement('li');
-  comment.classList.add('comment-counter');
-  comment.innerHTML = 'Comments (<span>5</span>)';
-
+  const commentNumber = document.createElement('li');
+  commentNumber.classList.add('comment-counter');
+  // commentNumber.innerHTML = 'Comments (<span>5</span>)';
   div.appendChild(commentHeader);
-  commentText.appendChild(comment);
+  commentText.appendChild(commentNumber);
   div.appendChild(commentText);
   const displayComments = document.createElement('ul');
   displayComments.classList.add('p-comment');
@@ -56,7 +56,7 @@ const popUp = async ([meal]) => {
   form.appendChild(input);
   form.appendChild(textArea);
   const btn = document.createElement('button');
-  btn.type = 'submit';
+  btn.type = 'button';
   btn.innerText = 'Comments';
   form.appendChild(btn);
   div.appendChild(form);
@@ -65,8 +65,15 @@ const popUp = async ([meal]) => {
     popUpContainer.classList.remove('pop');
   });
 
+  // const addComment = (el) => {
+  //   const comments = document.createElement('li');
+  //   comments.innerHTML = `<span>${el.creationDate}</span> ${el.username}: ${el.comment}`;
+  //   displayComments.appendChild(comments);
+  // };
+
   const addComment = (el) => {
     const comments = document.createElement('li');
+    comments.classList.add('.comment');
     comments.innerHTML = `<span>${el.creationDate}</span> ${el.username}: ${el.comment}`;
     displayComments.appendChild(comments);
   };
@@ -79,14 +86,18 @@ const popUp = async ([meal]) => {
     addComment({ creationDate, comment: userComment, username: userName });
     form.reset();
     await setCommentsToAPI(meal.idMeal, userName, userComment);
-  });
+ 
 
   const commentList = await getCommentsFromAPI(meal.idMeal);
   commentList.forEach((element) => {
+    
+    const counter = commentCounter(commentList);
+    commentNumber.innerHTML = `Comments (${counter})`;
     addComment(element);
   });
-
-  await setCommentsToAPI(meal.idMeal, meal.username, meal.usercomment);
+   });
+  
 };
 
 export default popUp;
+
