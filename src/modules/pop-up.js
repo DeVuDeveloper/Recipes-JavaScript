@@ -26,7 +26,7 @@ const popUp = async ([meal]) => {
   const li2 = document.createElement('li');
   const li3 = document.createElement('li');
   li.innerText = `Category : ${meal.strCategory}`;
-  li2.innerText = `Area : ${meal.idMeal}`;
+  li2.innerText = `Area : ${meal.strArea}`;
   li3.innerText = `Recipe : ${meal.strInstructions}`;
   iDText.appendChild(li);
   iDText.appendChild(li2);
@@ -37,13 +37,15 @@ const popUp = async ([meal]) => {
   commentHeader.innerText = 'Comments';
   const commentText = document.createElement('ul');
   const comment = document.createElement('li');
-  comment.innerText = 'comment 1';
+  comment.classList.add('comment-counter');
+  comment.innerHTML = 'Comments (<span>5</span>)';
+
   div.appendChild(commentHeader);
   commentText.appendChild(comment);
   div.appendChild(commentText);
-  const p = document.createElement('p');
-  p.classList.add('p-comment');
-  div.appendChild(p);
+  const displayComments = document.createElement('ul');
+  displayComments.classList.add('p-comment');
+  div.appendChild(displayComments);
   const form = document.createElement('form');
   const input = document.createElement('input');
   input.placeholder = 'Your name';
@@ -63,20 +65,28 @@ const popUp = async ([meal]) => {
     popUpContainer.classList.remove('pop');
   });
 
-  const date = new Date();
-
   btn.addEventListener('click', async () => {
+    const date = new Date();
+    const creation_date = date.toISOString().split('T')[0];
     const userName = input.value;
     const userComment = textArea.value;
-
-    const comments = ` ${date.toLocaleDateString()}  ${
-      input.value
-    } : ${userComment}`;
-    p.innerText = comments;
+    addComment({ creation_date, comment: userComment, username: userName });
     form.reset();
-
     await setCommentsToAPI(meal.idMeal, userName, userComment);
   });
+
+  const addComment = (el) => {
+    const comments = document.createElement('li');
+    comments.innerHTML = `<span>${el.creation_date}</span> ${el.username}: ${el.comment}`;
+    displayComments.appendChild(comments);
+  };
+
+  const commentList = await getCommentsFromAPI(meal.idMeal);
+  commentList.forEach((element) => {
+    addComment(element);
+  });
+
+  await setCommentsToAPI(meal.idMeal, userName, userComment);
 };
 
 export default popUp;
