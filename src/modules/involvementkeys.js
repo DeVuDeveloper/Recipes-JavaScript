@@ -25,4 +25,4 @@ const getCommentsFromAPI = async (idMeal) => {
   return result;
 };
 
-export { setCommentsToAPI, getCommentsFromAPI };
+export default { setCommentsToAPI, getCommentsFromAPI };

@@ -1,4 +1,4 @@
-import { setCommentsToAPI, getCommentsFromAPI } from './involvementkeys.js';
+import setCommentsToAPI from './involvementkeys.js';
 
 const popUpContainer = document.querySelector('.pop-up-container');
 const popUp = async ([meal]) => {
@@ -43,7 +43,6 @@ const popUp = async ([meal]) => {
   div.appendChild(commentText);
   const p = document.createElement('p');
   p.classList.add('p-comment');
-  // p.innerText = 'Add a comment';
   div.appendChild(p);
   const form = document.createElement('form');
   const input = document.createElement('input');
