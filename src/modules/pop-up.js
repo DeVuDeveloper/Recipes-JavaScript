@@ -86,18 +86,14 @@ const popUp = async ([meal]) => {
     addComment({ creationDate, comment: userComment, username: userName });
     form.reset();
     await setCommentsToAPI(meal.idMeal, userName, userComment);
- 
-
-  const commentList = await getCommentsFromAPI(meal.idMeal);
-  commentList.forEach((element) => {
-    
+    const commentList = await getCommentsFromAPI(meal.idMeal);
+      commentList.forEach((element) => {
     const counter = commentCounter(commentList);
-    commentNumber.innerHTML = `Comments (${counter})`;
-    addComment(element);
+      commentNumber.innerHTML = `Comments (${counter})`;
+     addComment(element);
   });
    });
-  
-};
+  };
 
 export default popUp;
 
