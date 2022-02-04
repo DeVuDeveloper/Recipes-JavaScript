@@ -40,7 +40,6 @@ const list = (meals) => {
     anchor.href = '#';
     anchor.text = 'Comments';
     commentBtn.appendChild(anchor);
-  
     const likesData = await getLikesFromAPI();
     const showLikes = (likesData, likes) => {
       likesData.forEach((meal) => {
