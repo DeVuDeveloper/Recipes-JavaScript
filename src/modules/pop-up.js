@@ -3,7 +3,6 @@ import commentCounter from './commentCounter.js';
 
 const mainPopUp = document.querySelector('.main-pop-up');
 const popUpContainer = document.querySelector('.pop-up-container');
-
 const popUp = async ([meal]) => {
   mainPopUp.style.display = 'block';
   popUpContainer.innerHTML = '';

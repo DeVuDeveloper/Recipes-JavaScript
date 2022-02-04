@@ -1,5 +1,7 @@
 import { addLikeToAPI, getLikesFromAPI } from './likes.js';
 import homepageCounter from './homepageCounter.js';
+import popUp from './pop-up.js';
+import getInfo from './getInfo.js';
 
 const mealsContainer = document.querySelector('.cards-wrapper');
 const numbersOfMeals = document.querySelector('.meals-number');
@@ -42,7 +44,6 @@ const list = (meals) => {
     commentBtn.appendChild(anchor);
 
     const popUpContainer = document.querySelector('.pop-up-container');
-
     anchor.addEventListener('click', async () => {
       popUpContainer.classList.add('pop');
       popUp(await getInfo(meal.idMeal));
