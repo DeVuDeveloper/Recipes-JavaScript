@@ -46,6 +46,7 @@ const list = (meals) => {
       popUpContainer.classList.add('pop');
       popUp(await getInfo(meal.idMeal));
     });
+
     const likesData = await getLikesFromAPI();
     const showLikes = (likesData, likes) => {
       likesData.forEach((meal) => {
