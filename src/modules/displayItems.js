@@ -1,5 +1,5 @@
-import { addLikeToAPI, getLikesFromAPI } from './likes.js';
-import homepageCounter from './homepageCounter.js';
+import { addLikeToAPI, getLikesFromAPI } from './likes';
+import homepageCounter from './homepageCounter';
 
 const mealsContainer = document.querySelector('.cards-wrapper');
 const numbersOfMeals = document.querySelector('.meals-number');
