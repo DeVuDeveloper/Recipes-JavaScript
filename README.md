@@ -4,7 +4,7 @@
 Live preview [here](https://vudej.github.io/Capstone-2-JavaScript/dist/). 
 
 ## Screenshots
-![Example screenshot](img/screenshot.PNG)
+![Example screenshot](img/screenshot.png)
 
 ## Contents
 * [Homepage](#homepage)
