@@ -10,18 +10,19 @@ const list = (meals) => {
   meals.forEach(async (meal) => {
     const ul = document.createElement('ul');
     ul.id = meal.idMeal;
-    ul.classList.add('cards');
+    ul.classList.add('card');
+    ul.style.backgroundImage = `url('${meal.strMealThumb}')`;
     mealsContainer.appendChild(ul);
     const imageContainer = document.createElement('li');
     ul.appendChild(imageContainer);
     const image = document.createElement('img');
-    image.src = meal.strMealThumb;
     image.classList.add('image');
     imageContainer.appendChild(image);
     const mealTitle = document.createElement('li');
     ul.appendChild(mealTitle);
     mealTitle.classList.add('flex-li');
     const mealName = document.createElement('span');
+    mealName.classList.add('meal-name');
     mealName.innerHTML = meal.strMeal;
     mealTitle.appendChild(mealName);
     const spanHeart = document.createElement('span');
