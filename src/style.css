@@ -71,7 +71,7 @@ nav img {
   font-size: 16px;
   font-size: 20px;
   font-weight: bold;
-  color: #464866;;
+  color: #464866;
 }
 
 .cards-wrapper {
@@ -103,9 +103,9 @@ nav img {
 }
 
 .card:hover {
-  box-shadow: 
-    10px 12px 6px rgba(0,0,0,0.2),
-    -1px -1px 7px rgba(0,0,0,0.2);
+  box-shadow:
+    10px 12px 6px rgba(0, 0, 0, 0.2),
+    -1px -1px 7px rgba(0, 0, 0, 0.2);
 }
 
 .flex-li {
@@ -124,12 +124,13 @@ nav img {
 }
 
 .flex-li  span {
-  color: #fff;;
+  color: #fff;
   margin-right: 10px;
 }
 
 .like {
   font-size: 24px;
+  cursor: pointer;
 }
 
 .likeCounter {
@@ -146,7 +147,7 @@ nav img {
 .comments-btn {
   border: 1px solid #fff;
   background-color: #2e9cca;
-  border-radius: 21px;;
+  border-radius: 21px;
   color: #fff;
   position: absolute;
   bottom: 3px;
@@ -159,11 +160,7 @@ nav img {
 }
 
 .comments-btn:hover {
-  color:#fccd04;
-}
-
-.like {
-  cursor: pointer;
+  color: #fccd04;
 }
 
 .pop-up-container {
@@ -292,12 +289,12 @@ footer {
 
   .tittle {
     font-size: 70px;
-   }
+  }
 
   .name {
     font-size: 40px;
-}
-  
+  }
+
   .meal-name {
     font-size: 24px;
   }

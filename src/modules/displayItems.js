@@ -8,30 +8,21 @@ const numbersOfMeals = document.querySelector('.meals-number');
 
 const list = (meals) => {
   meals.forEach(async (meal) => {
-
-    // const cardContainer = document.createElement('div');
-    // cardContainer.classList.add('card-container');
-    // mealsContainer.appendChild(cardContainer);
     const ul = document.createElement('ul');
     ul.id = meal.idMeal;
     ul.classList.add('card');
     ul.style.backgroundImage = `url('${meal.strMealThumb}')`;
     mealsContainer.appendChild(ul);
-    // const cardBody = document.createElement('div');
-    // cardBody.classList.add('card');
-    // mealsContainer.appendChild(cardBody);
     const imageContainer = document.createElement('li');
     ul.appendChild(imageContainer);
     const image = document.createElement('img');
-    // image.src = meal.strMealThumb;
     image.classList.add('image');
     imageContainer.appendChild(image);
-    
     const mealTitle = document.createElement('li');
     ul.appendChild(mealTitle);
     mealTitle.classList.add('flex-li');
     const mealName = document.createElement('span');
-    mealName.classList.add('meal-name')
+    mealName.classList.add('meal-name');
     mealName.innerHTML = meal.strMeal;
     mealTitle.appendChild(mealName);
     const spanHeart = document.createElement('span');
