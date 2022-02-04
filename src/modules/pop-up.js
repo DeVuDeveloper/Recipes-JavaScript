@@ -72,6 +72,8 @@ const popUp = async ([meal]) => {
   closeButton.addEventListener('click', () => {
     popUpContainer.classList.remove('pop');
     mainPopUp.style.display = 'none';
+    const navbar = document.querySelector('.navbar');
+    navbar.classList.remove('hide');
   });
 
   const addComment = (el) => {
