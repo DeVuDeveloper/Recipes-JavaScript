@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quintessential&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap');
 
 * {
   padding: 0;
@@ -36,10 +37,6 @@ a {
   margin: 0;
 }
 
-.navbar li {
-  font-size: 20px;
-}
-
 .navbar u {
   font-weight: bold;
 }
@@ -49,16 +46,38 @@ nav img {
   height: 90px;
 }
 
+.tittle {
+  font-family: 'Neonderthaw', sans-serif;
+  font-size: 70px;
+  color: #464866;
+}
+
+.name {
+  font-family: 'Nanum Pen Script', sans-serif;
+  font-size: 30px;
+  color: #464866;
+}
+
 .meal-name {
   color: #464866;
   font-family: 'Nanum Pen Script', sans-serif;
-  font-size: 20px;
+  font-size: 23px;
   font-weight: 700;
 }
 
 .meals-number {
   color: #def2f1;
+}
 
+.like {
+  font-size: 24px;
+}
+
+.date {
+  font-size: 16px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #464866;;
 }
 
 
@@ -79,11 +98,11 @@ nav img {
   background-color: #29648a;
   transition: box-shadow 130ms ease-in-out;
   overflow: hidden;
-  height: 330px;
+  height: 430px;
   position: relative;
   margin: 0;
   padding: 0;
-  width: 250px;
+  width: 350px;
 }
 
 .card:hover {
@@ -266,8 +285,8 @@ footer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 100px 300px;
-    margin: 200px 0 100px 300px;
+    gap: 100px 200px;
+    margin: 200px 0 100px 200px;
     text-align: center;
   }
 }

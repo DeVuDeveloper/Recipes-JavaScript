@@ -15,6 +15,7 @@
     />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.0.2/build/global/luxon.min.js" integrity="sha256-CnZmNCHHUMy22/PJclCIISZ5Ib4MnUu+7ee5YNxtsZQ=" crossorigin="anonymous"></script>
     <title>Meals</title>
   </head>
 
@@ -24,22 +25,19 @@
     <header>
       <nav>
         <ul class="navbar">
-          <li><img class="logo" src="img/logo.jpg" alt="me" /></li>
+          <li><img class="logo" src="img/logo.png" alt="me" /></li>
+          <li class="tittle">Fish recipes</li>
           <li class='name'>
             <u>Meals(<span class="meals-number"></span>)</u>
           </li>
+          <li class='date'></li>
+          
         </ul>
       </nav>
     </header>
 
     <main>
-      <section class="cards-wrapper">
-        <svg style="display: none;">
-          <symbol id="star" viewBox="0 0 98 92">
-          <title>star</title>
-          <path stroke='#fff' stroke-width='12' d='M49 73.5L22.55 87.406l5.05-29.453-21.398-20.86 29.573-4.296L49 6l13.225 26.797 29.573 4.297-21.4 20.86 5.052 29.452z' fill-rule='evenodd'/></symbol>
-        </svg>
-      </section>
+      <section class="cards-wrapper"></section>
     </main>
 
     <footer></footer>

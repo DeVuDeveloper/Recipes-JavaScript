@@ -20,3 +20,7 @@ Footer();
 window.onload = async () => {
   list(await getDataFromAPI());
 };
+
+const { luxon } = window;
+const date = document.querySelector('.date');
+date.innerText = luxon.DateTime.now().toFormat('MMMM dd, yyyy, hh:mm:ss a').toString();
