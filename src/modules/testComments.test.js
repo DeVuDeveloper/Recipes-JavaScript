@@ -20,7 +20,6 @@ describe('Testing counter function', () => {
     }
 
     expect(comments[0].username).toBe('Jane');
-    return;
   });
 
   test('if it gives right comment', () => {
