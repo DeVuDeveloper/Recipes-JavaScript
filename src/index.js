@@ -17,3 +17,6 @@ const Footer = () => {
 };
 
 Footer();
+window.onload = async () => {
+  list(await getDataFromAPI());
+};

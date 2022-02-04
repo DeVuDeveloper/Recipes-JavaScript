@@ -40,7 +40,12 @@ const list = (meals) => {
     anchor.href = '#';
     anchor.text = 'Comments';
     commentBtn.appendChild(anchor);
+    const popUpContainer = document.querySelector('.pop-up-container');
 
+    anchor.addEventListener('click', async () => {
+      popUpContainer.classList.add('pop');
+      popUp(await getInfo(meal.idMeal));
+    });
     const likesData = await getLikesFromAPI();
     const showLikes = (likesData, likes) => {
       likesData.forEach((meal) => {
