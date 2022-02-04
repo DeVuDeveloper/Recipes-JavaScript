@@ -93,12 +93,9 @@ const popUp = async ([meal]) => {
     commentList.forEach((element) => {
       const counter = commentCounter(commentList);
       if (element.length === userName) {
-        // commentNumber.innerHTML = `Comments (${counter})`;
         addComment(element);
       }
       commentNumber.innerHTML = `Comments (${counter})`;
-      // form.clear();
-      // addComment(element);
       setCommentsToAPI(meal.idMeal, userName, userComment).clear();
     });
   });

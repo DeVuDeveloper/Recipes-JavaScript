@@ -214,7 +214,7 @@ form {
 input {
   padding-left: 10px;
   color: bisque;
-  background-color: rgb(68, 64, 64);
+  background-color: rgb(233, 224, 224);
   width: 400px;
   height: 40px;
   border-radius: 5px;
@@ -225,7 +225,7 @@ textarea {
   padding-left: 10px;
   padding-left: 10px;
   color: bisque;
-  background-color: rgb(68, 64, 64);
+  background-color: rgb(236, 232, 232);
   width: 400px;
   border-radius: 5px;
   border: 1px #000 solid;
@@ -234,6 +234,7 @@ textarea {
 ::placeholder {
   font-size: 15px;
   font-weight: 600;
+  color: rgb(112, 107, 107);
 }
 
 .btn {
@@ -361,7 +362,7 @@ footer {
   input {
     padding-left: 10px;
     color: bisque;
-    background-color: rgb(68, 64, 64);
+    background-color: rgb(179, 168, 168);
     width: 250px;
     height: 40px;
     border-radius: 5px;
