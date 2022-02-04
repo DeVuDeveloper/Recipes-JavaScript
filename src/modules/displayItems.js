@@ -1,8 +1,8 @@
-import getInfo from './getInfo.js';
-import popUp from './pop-up.js';
 import { addLikeToAPI, getLikesFromAPI } from './likes.js';
+import homepageCounter from './homepageCounter.js';
 
 const mealsContainer = document.querySelector('.cards-wrapper');
+const numbersOfMeals = document.querySelector('.meals-number');
 
 const list = (meals) => {
   meals.forEach(async (meal) => {
@@ -40,12 +40,14 @@ const list = (meals) => {
     anchor.href = '#';
     anchor.text = 'Comments';
     commentBtn.appendChild(anchor);
+
     const popUpContainer = document.querySelector('.pop-up-container');
 
     anchor.addEventListener('click', async () => {
       popUpContainer.classList.add('pop');
       popUp(await getInfo(meal.idMeal));
     });
+
 
     const likesData = await getLikesFromAPI();
     const showLikes = (likesData, likes) => {
@@ -68,6 +70,8 @@ const list = (meals) => {
       showLikes(likeComing, likes);
     });
   });
+
+  numbersOfMeals.textContent = homepageCounter(meals);
 };
 
 export default list;
