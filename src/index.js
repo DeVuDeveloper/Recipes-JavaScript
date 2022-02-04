@@ -1,6 +1,6 @@
 import './style.css';
-import list from './modules/displayItems';
-import getDataFromAPI from './modules/getDataFromAPI';
+import list from './modules/displayItems.js';
+import getDataFromAPI from './modules/getDataFromAPI.js';
 
 window.onload = async () => {
   list(await getDataFromAPI());
