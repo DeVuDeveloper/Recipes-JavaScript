@@ -172,11 +172,10 @@ nav img {
   margin: 60px auto 0 auto;
   box-shadow: 5px 5px 115px -14px black;
   border-radius: 4px;
-  background-image:
-  linear-gradient(
-    rgba(22, 12, 46, 0.95),
-    rgba(73, 66, 92, 0.95)
-  ),
+  background-image: linear-gradient(
+      rgba(22, 12, 46, 0.95),
+      rgba(73, 66, 92, 0.95)
+    ),
     url('img/capstone-meal.jpg');
 }
 
@@ -239,8 +238,7 @@ nav img {
   z-index: 111 !important;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-  -webkit-mask-image: 
-  -webkit-gradient(
+  -webkit-mask-image: -webkit-gradient(
     linear,
     left top,
     left bottom,
@@ -400,8 +398,7 @@ footer {
     z-index: 111 !important;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
-    -webkit-mask-image: 
-    -webkit-gradient(
+    -webkit-mask-image: -webkit-gradient(
       linear,
       left top,
       left bottom,
@@ -424,11 +421,10 @@ footer {
     margin: 60px auto 0 auto;
     box-shadow: 5px 5px 115px -14px black;
     border-radius: 4px;
-    background-image:
-    linear-gradient(
-      rgba(22, 12, 46, 0.95),
-      rgba(73, 66, 92, 0.95)
-    ),
+    background-image: linear-gradient(
+        rgba(22, 12, 46, 0.95),
+        rgba(73, 66, 92, 0.95)
+      ),
       url('img/capstone-meal.jpg');
   }
 
