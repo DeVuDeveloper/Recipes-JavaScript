@@ -39,7 +39,6 @@ const popUp = async ([meal]) => {
   const commentText = document.createElement('ul');
   const commentNumber = document.createElement('li');
   commentNumber.classList.add('comment-counter');
-  // commentNumber.innerHTML = 'Comments (<span>5</span>)';
   div.appendChild(commentHeader);
   commentText.appendChild(commentNumber);
   div.appendChild(commentText);
@@ -65,12 +64,6 @@ const popUp = async ([meal]) => {
     popUpContainer.classList.remove('pop');
   });
 
-  // const addComment = (el) => {
-  //   const comments = document.createElement('li');
-  //   comments.innerHTML = `<span>${el.creationDate}</span> ${el.username}: ${el.comment}`;
-  //   displayComments.appendChild(comments);
-  // };
-
   const addComment = (el) => {
     const comments = document.createElement('li');
     comments.classList.add('.comment');
@@ -91,6 +84,7 @@ const popUp = async ([meal]) => {
       const counter = commentCounter(commentList);
       commentNumber.innerHTML = `Comments (${counter})`;
       addComment(element);
+      form.clear();
     });
   });
 };
