@@ -1,16 +1,26 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quintessential&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap');
+
+
 * {
   padding: 0;
+  margin: 0;
   list-style: none;
   box-sizing: border-box;
 }
 
 body {
   position: relative;
-  min-height: 95vh;
+  min-height: 100vh;
   margin: 0;
+  background-color: #464866;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 a {
@@ -22,10 +32,13 @@ a {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-}
-
-.navbar li {
-  font-size: 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #aaabb8;
+  padding: 0;
+  margin: 0;
 }
 
 .navbar u {
@@ -33,50 +46,126 @@ a {
 }
 
 nav img {
-  width: 150px;
-  height: 150px;
+  display: none;
 }
 
-body::after {
-  content: '';
-  display: block;
-  height: 50px;
+.tittle {
+  font-family: 'Neonderthaw', sans-serif;
+  font-size: 30px;
+  color: #464866;
+}
+
+.name {
+  font-family: 'Nanum Pen Script', sans-serif;
+  font-size: 20px;
+  color: #464866;
+}
+
+.meal-name {
+  color: #464866;
+  font-family: 'Nanum Pen Script', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.meals-number {
+  color: #def2f1;
+}
+
+.date {
+  font-size: 16px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #464866;
 }
 
 .cards-wrapper {
   display: grid;
-  align-self: center;
-  text-align: center;
+  align-items: center;
   justify-content: center;
-  padding: 0;
+  padding: 110px 10px;
+  gap: 30px;
 }
 
-.cards {
-  margin: 50px auto;
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: 98%;
+  background-position-x: 50%;
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
+  background-color: #29648a;
+  transition: box-shadow 130ms ease-in-out;
+  overflow: hidden;
+  height: 430px;
+  position: relative;
+  margin-bottom: 0;
+  padding: 50px;
+  width: 370px;
 }
 
-.image {
-  width: 200px;
-}
-
-.cards li {
-  padding: 6px;
-}
-
-.comments-btn {
-  border: 1px solid black;
-  padding: 3px;
+.card:hover {
+  box-shadow:
+    10px 12px 6px rgba(0, 0, 0, 0.2),
+    -1px -1px 7px rgba(0, 0, 0, 0.2);
 }
 
 .flex-li {
   display: flex;
   justify-content: center;
   text-align: center;
-  gap: 2px;
+  background-color: #2e9cca;
+  bottom: 65px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  color: #fff;
+  padding: 0;
+  margin-right: 40px;
+  width: 100%;
+}
+
+.flex-li span {
+  color: #fff;
+  margin-right: 10px;
 }
 
 .like {
+  font-size: 24px;
   cursor: pointer;
+}
+
+.likeCounter {
+  background-color: #fff;
+  bottom: 40px;
+  left: 0;
+  font-family: 'Quintessential', sans-serif;
+  position: absolute;
+  right: 0;
+  color: #464886;
+  text-align: center;
+}
+
+.comments-btn {
+  border: 1px solid #fff;
+  background-color: #2e9cca;
+  border-radius: 21px;
+  color: #fff;
+  position: absolute;
+  bottom: 3px;
+  right: 38%;
+  text-align: center;
+  margin: auto;
+  padding: 0 4px;
+  font-family: 'Nanum Pen Script', sans-serif;
+  font-size: 20px;
+}
+
+.comments-btn:hover {
+  color: #fccd04;
 }
 
 .pop-up-container {
@@ -106,6 +195,9 @@ body::after {
   backdrop-filter: blur(3px);
   overflow-y: scroll;
   z-index: 1;
+  margin-top: 200px;
+  z-index: -1;
+
 }
 
 .pop-up-container.pop {
@@ -143,10 +235,6 @@ body::after {
   margin-right: 50px;
   color: #e98074;
   font-family: 'Roboto', sans-serif;
-}
-
-.two li {
-  margin-right: 0;
 }
 
 .meal-image {
@@ -264,14 +352,13 @@ footer::after {
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   height: 50px;
   font-size: 22px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: #000;
-  background-color: #fff;
+  color: rgb(2, 28, 43);
+  background-color: #aaabb8;
   font-weight: bold;
   padding: 10px 0 10px 0;
   text-align: center;
@@ -279,11 +366,34 @@ footer {
 
 @media only screen and (min-width: 678px) {
   .cards-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 100px 200px;
+    margin: 100px 0 100px 0;
     text-align: center;
-    padding: 0;
+  }
+
+  nav img {
+    display: block;
+    width: 100px;
+    height: 100px;
+  }
+
+  .tittle {
+    font-size: 70px;
+  }
+
+  .name {
+    font-size: 40px;
+  }
+
+  .meal-name {
+    font-size: 24px;
+  }
+
+  .comments-btn {
+    font-size: 21px;
   }
 }
 
