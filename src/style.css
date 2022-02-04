@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quintessential&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap');
@@ -103,9 +105,7 @@ nav img {
 }
 
 .card:hover {
-  box-shadow:
-    10px 12px 6px rgba(0, 0, 0, 0.2),
-    -1px -1px 7px rgba(0, 0, 0, 0.2);
+  box-shadow: 10px 12px 6px rgba(0, 0, 0, 0.2), -1px -1px 7px rgba(0, 0, 0, 0.2);
 }
 
 .flex-li {
@@ -165,13 +165,31 @@ nav img {
 
 .pop-up-container {
   display: none;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80vw;
+  width: 60vw;
   border: 2px #000 solid;
   box-sizing: border-box;
-  margin-top: 200px;
-  z-index: -1;
+  background-color: #1e1b26;
+  margin: 60px auto 0 auto;
+  box-shadow: 5px 5px 115px -14px black;
+  border-radius: 4px;
+  background-image:
+    linear-gradient(
+      rgba(22, 12, 46, 0.95),
+      rgba(73, 66, 92, 0.95)
+    ),
+    url('img/capstone-meal.jpg');
+}
+
+.main-pop-up {
+  display: none;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(100, 88, 88, 0.7);
+  backdrop-filter: blur(3px);
+  overflow-y: scroll;
+  z-index: 1;
 }
 
 .pop-up-container.pop {
@@ -188,33 +206,84 @@ nav img {
   justify-content: center;
 }
 
-.id-text {
+.id-title {
   display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: center;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bolder;
 }
 
-.id-text li {
-  text-align: left;
+.meal-details1 {
+  color: #a4b3b6;
+  font-size: 22px;
+  font-family: 'Robot', sans-serif;
+  font-weight: bold;
+}
+
+.meal-details {
   margin-right: 50px;
-  align-items: flex-start;
+  color: #e98074;
+  font-family: 'Roboto', sans-serif;
 }
 
 .meal-image {
-  height: 400px;
-  width: 500px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 80%;
+  margin-top: 60px;
+  height: 380px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 111 !important;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  -webkit-mask-image:
+    -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      color-stop(0, rgba(0, 0, 0, 1)),
+      color-stop(0.35, rgba(0, 0, 0, 1)),
+      color-stop(0.5, rgba(0, 0, 0, 1)),
+      color-stop(0.65, rgba(0, 0, 0, 1)),
+      color-stop(0.85, rgba(0, 0, 0, 0.6)),
+      color-stop(1, rgba(0, 0, 0, 0))
+    );
+  position: relative;
+}
+
+.meal-image:hover {
+  transform: scale(1.1);
 }
 
 .close-button {
-  float: right;
-  margin-right: 20px;
+  position: absolute;
+  margin-right: 10px;
   font-size: 30px;
   font-weight: bold;
   border: none;
-  background-color: #fff;
+  background-color: #1e1b26;
+  color: rgb(141, 105, 105);
+}
+
+.close-button:hover {
+  color: red;
+  transform: scale(1.1);
+}
+
+.comment-text {
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #a8a878;
+  font-size: 25px;
+}
+
+.comment-counter {
+  color: burlywood;
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
 }
 
 form {
@@ -225,29 +294,45 @@ form {
 }
 
 input {
-  width: 200px;
-  border: 2px #000 solid;
-  height: 30px;
   padding-left: 10px;
+  color: bisque;
+  background-color: rgb(233, 224, 224);
+  width: 400px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px #000 solid;
 }
 
 textarea {
-  border: 2px #000 solid;
   padding-left: 10px;
+  color: bisque;
+  background-color: rgb(236, 232, 232);
+  width: 400px;
+  border-radius: 5px;
+  border: 1px #000 solid;
 }
 
 ::placeholder {
   font-size: 15px;
   font-weight: 600;
+  color: rgb(112, 107, 107);
 }
 
-.comment-btn {
+.btn {
   padding: 5px;
-  box-shadow: 5px 5px #000;
+  box-shadow: 5px 5px rgb(26, 25, 25);
   margin-bottom: 20px;
   font-size: 20px;
   border: 2px #000 solid;
-  width: 150px;
+  width: 250px;
+  background-color: #44318d;
+  color: #fff;
+}
+
+.white {
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 800;
 }
 
 footer::after {
@@ -301,5 +386,99 @@ footer {
 
   .comments-btn {
     font-size: 21px;
+  }
+}
+
+@media only screen and (max-width: 678px) {
+  .meal-image {
+    width: 80%;
+    margin-top: 60px;
+    height: 380px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 111 !important;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    -webkit-mask-image:
+      -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, rgba(0, 0, 0, 1)),
+        color-stop(0.35, rgba(0, 0, 0, 1)),
+        color-stop(0.5, rgba(0, 0, 0, 1)),
+        color-stop(0.65, rgba(0, 0, 0, 1)),
+        color-stop(0.85, rgba(0, 0, 0, 0.6)),
+        color-stop(1, rgba(0, 0, 0, 0))
+      );
+    position: relative;
+  }
+
+  .pop-up-container {
+    display: none;
+    width: 90vw;
+    border: 2px #000 solid;
+    box-sizing: border-box;
+    background-color: #1e1b26;
+    margin: 60px auto 0 auto;
+    box-shadow: 5px 5px 115px -14px black;
+    border-radius: 4px;
+    background-image:
+      linear-gradient(
+        rgba(22, 12, 46, 0.95),
+        rgba(73, 66, 92, 0.95)
+      ),
+      url('img/capstone-meal.jpg');
+  }
+
+  .main-pop-up {
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(100, 88, 88, 0.7);
+    backdrop-filter: blur(3px);
+    overflow-y: scroll;
+    z-index: 1;
+  }
+
+  .pop-up-container.pop {
+    display: grid;
+  }
+
+  .pop-up {
+    text-align: center;
+    width: fit-content;
+  }
+
+  .close-button {
+    position: absolute;
+    margin-right: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    border: none;
+    background-color: #1e1b26;
+    color: rgb(141, 105, 105);
+  }
+
+  input {
+    padding-left: 10px;
+    color: bisque;
+    background-color: rgb(179, 168, 168);
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px #000 solid;
+  }
+
+  textarea {
+    padding-left: 10px;
+    color: bisque;
+    background-color: rgb(68, 64, 64);
+    width: 250px;
+    border-radius: 5px;
+    border: 1px #000 solid;
   }
 }
