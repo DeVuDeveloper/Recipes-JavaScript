@@ -14,7 +14,6 @@ body {
   min-height: 100vh;
   margin: 0;
   background-color: #464866;
-  
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -42,35 +41,30 @@ a {
 }
 
 nav img {
-  width: 90px;
-  height: 90px;
+  display: none;
 }
 
 .tittle {
   font-family: 'Neonderthaw', sans-serif;
-  font-size: 70px;
+  font-size: 30px;
   color: #464866;
 }
 
 .name {
   font-family: 'Nanum Pen Script', sans-serif;
-  font-size: 30px;
+  font-size: 20px;
   color: #464866;
 }
 
 .meal-name {
   color: #464866;
   font-family: 'Nanum Pen Script', sans-serif;
-  font-size: 23px;
+  font-size: 16px;
   font-weight: 700;
 }
 
 .meals-number {
   color: #def2f1;
-}
-
-.like {
-  font-size: 24px;
 }
 
 .date {
@@ -80,10 +74,13 @@ nav img {
   color: #464866;;
 }
 
-
-/* .card {
-  margin: 50px auto;
-} */
+.cards-wrapper {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding: 110px 10px;
+  gap: 30px;
+}
 
 .card {
   display: flex;
@@ -91,7 +88,7 @@ nav img {
   align-items: center;
   justify-content: center;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 98%;
   background-position-x: 50%;
   border-top-left-radius: 10%;
   border-top-right-radius: 10%;
@@ -100,9 +97,9 @@ nav img {
   overflow: hidden;
   height: 430px;
   position: relative;
-  margin: 0;
-  padding: 0;
-  width: 350px;
+  margin-bottom: 0;
+  padding: 50px;
+  width: 370px;
 }
 
 .card:hover {
@@ -113,20 +110,26 @@ nav img {
 
 .flex-li {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   text-align: center;
   background-color: #2e9cca;
   bottom: 65px;
   left: 0;
-  padding: 10px;;
   position: absolute;
   right: 0;
   color: #fff;
-
+  padding: 0;
+  margin-right: 40px;
+  width: 100%;
 }
 
 .flex-li  span {
   color: #fff;;
+  margin-right: 10px;
+}
+
+.like {
+  font-size: 24px;
 }
 
 .likeCounter {
@@ -137,13 +140,8 @@ nav img {
   position: absolute;
   right: 0;
   color: #464886;
+  text-align: center;
 }
-
-
-/* .cards-wraper {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-} */
 
 .comments-btn {
   border: 1px solid #fff;
@@ -152,7 +150,7 @@ nav img {
   color: #fff;
   position: absolute;
   bottom: 3px;
-  right: 33%;
+  right: 38%;
   text-align: center;
   margin: auto;
   padding: 0 4px;
@@ -204,10 +202,6 @@ nav img {
   text-align: left;
   margin-right: 50px;
   align-items: flex-start;
-}
-
-.two li {
-  margin-right: 0;
 }
 
 .meal-image {
@@ -286,7 +280,29 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 100px 200px;
-    margin: 200px 0 100px 200px;
+    margin: 100px 0 100px 0;
     text-align: center;
+  }
+
+  nav img {
+    display: block;
+    width: 100px;
+    height: 100px;
+  }
+
+  .tittle {
+    font-size: 70px;
+   }
+
+  .name {
+    font-size: 40px;
+}
+  
+  .meal-name {
+    font-size: 24px;
+  }
+
+  .comments-btn {
+    font-size: 21px;
   }
 }
