@@ -84,6 +84,7 @@ const popUp = async ([meal]) => {
       const counter = commentCounter(commentList);
       commentNumber.innerHTML = `Comments (${counter})`;
       addComment(element);
+      form.clear();
     });
   });
 };
