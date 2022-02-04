@@ -1,5 +1,3 @@
-import getInfo from './getInfo.js';
-import popUp from './pop-up.js';
 import { addLikeToAPI, getLikesFromAPI } from './likes.js';
 import homepageCounter from './homepageCounter.js';
 
@@ -42,12 +40,6 @@ const list = (meals) => {
     anchor.href = '#';
     anchor.text = 'Comments';
     commentBtn.appendChild(anchor);
-    const popUpContainer = document.querySelector('.pop-up-container');
-
-    anchor.addEventListener('click', async () => {
-      popUpContainer.classList.add('pop');
-      popUp(await getInfo(meal.idMeal));
-    });
     const likesData = await getLikesFromAPI();
     const showLikes = (likesData, likes) => {
       likesData.forEach((meal) => {
