@@ -20,6 +20,7 @@ describe('Testing counter function', () => {
     }
 
     expect(comments[0].username).toBe('Jane');
+    return comments[i];
   });
 
   test('if it gives right comment', () => {
@@ -32,5 +33,6 @@ describe('Testing counter function', () => {
     }
 
     expect(comments[4].comment).toBe('I want one Kedgeree.');
+    return comments[i];
   });
 });
