@@ -38,6 +38,10 @@ a {
   margin: 0;
 }
 
+.hide {
+  display: none;
+}
+
 .navbar u {
   font-weight: bold;
 }
