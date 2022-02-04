@@ -1,11 +1,8 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quintessential&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap');
-
 
 * {
   padding: 0;
@@ -108,9 +105,7 @@ nav img {
 }
 
 .card:hover {
-  box-shadow:
-    10px 12px 6px rgba(0, 0, 0, 0.2),
-    -1px -1px 7px rgba(0, 0, 0, 0.2);
+  box-shadow: 10px 12px 6px rgba(0, 0, 0, 0.2), -1px -1px 7px rgba(0, 0, 0, 0.2);
 }
 
 .flex-li {
@@ -177,8 +172,7 @@ nav img {
   margin: 60px auto 0 auto;
   box-shadow: 5px 5px 115px -14px black;
   border-radius: 4px;
-  background-image:  
-  linear-gradient(
+  background-image: linear-gradient(
       rgba(22, 12, 46, 0.95),
       rgba(73, 66, 92, 0.95)
     ),
@@ -195,9 +189,6 @@ nav img {
   backdrop-filter: blur(3px);
   overflow-y: scroll;
   z-index: 1;
-  margin-top: 200px;
-  z-index: -1;
-
 }
 
 .pop-up-container.pop {
@@ -247,8 +238,7 @@ nav img {
   z-index: 111 !important;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-  -webkit-mask-image: 
-  -webkit-gradient(
+  -webkit-mask-image: -webkit-gradient(
     linear,
     left top,
     left bottom,
@@ -408,8 +398,7 @@ footer {
     z-index: 111 !important;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
-    -webkit-mask-image:
-    -webkit-gradient(
+    -webkit-mask-image: -webkit-gradient(
       linear,
       left top,
       left bottom,
