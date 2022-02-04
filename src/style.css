@@ -81,8 +81,6 @@ body::after {
 
 .pop-up-container {
   display: none;
-  margin-left: auto;
-  margin-right: auto;
   width: 60vw;
   border: 2px #000 solid;
   box-sizing: border-box;
@@ -91,7 +89,10 @@ body::after {
   margin: 60px auto 0 auto;
   box-shadow: 5px 5px 115px -14px black;
   border-radius: 4px;
-  background: linear-gradient(rgba(22, 12, 46, 0.95), rgba(73, 66, 92, 0.95)),
+  background-image: linear-gradient(
+      rgba(22, 12, 46, 0.95),
+      rgba(73, 66, 92, 0.95)
+    ),
     url('img/capstone-meal.jpg');
 }
 
@@ -130,6 +131,7 @@ body::after {
   font-family: 'Poppins', sans-serif;
   font-weight: bolder;
 }
+
 .meal-details1 {
   color: #a4b3b6;
   font-size: 22px;
@@ -168,7 +170,6 @@ body::after {
     color-stop(0.85, rgba(0, 0, 0, 0.6)),
     color-stop(1, rgba(0, 0, 0, 0))
   );
-
   position: relative;
 }
 
@@ -222,7 +223,6 @@ input {
 }
 
 textarea {
-  padding-left: 10px;
   padding-left: 10px;
   color: bisque;
   background-color: rgb(236, 232, 232);
@@ -308,7 +308,6 @@ footer {
       color-stop(0.85, rgba(0, 0, 0, 0.6)),
       color-stop(1, rgba(0, 0, 0, 0))
     );
-
     position: relative;
   }
 
@@ -319,12 +318,14 @@ footer {
     width: 90vw;
     border: 2px #000 solid;
     box-sizing: border-box;
-    margin-top: 50px;
     background-color: #1e1b26;
     margin: 60px auto 0 auto;
     box-shadow: 5px 5px 115px -14px black;
     border-radius: 4px;
-    background: linear-gradient(rgba(22, 12, 46, 0.95), rgba(73, 66, 92, 0.95)),
+    background-image: linear-gradient(
+        rgba(22, 12, 46, 0.95),
+        rgba(73, 66, 92, 0.95)
+      ),
       url('img/capstone-meal.jpg');
   }
 
@@ -370,7 +371,6 @@ footer {
   }
 
   textarea {
-    padding-left: 10px;
     padding-left: 10px;
     color: bisque;
     background-color: rgb(68, 64, 64);

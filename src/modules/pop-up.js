@@ -1,5 +1,6 @@
 import { setCommentsToAPI, getCommentsFromAPI } from './involvementkeys.js';
 import commentCounter from './commentCounter.js';
+
 const mainPopUp = document.querySelector('.main-pop-up');
 const popUpContainer = document.querySelector('.pop-up-container');
 
