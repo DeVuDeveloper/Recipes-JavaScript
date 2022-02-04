@@ -172,10 +172,11 @@ nav img {
   margin: 60px auto 0 auto;
   box-shadow: 5px 5px 115px -14px black;
   border-radius: 4px;
-  background-image: linear-gradient(
-      rgba(22, 12, 46, 0.95),
-      rgba(73, 66, 92, 0.95)
-    ),
+  background-image: 
+  linear-gradient(
+    rgba(22, 12, 46, 0.95),
+    rgba(73, 66, 92, 0.95)
+  ),
     url('img/capstone-meal.jpg');
 }
 
@@ -421,10 +422,11 @@ footer {
     margin: 60px auto 0 auto;
     box-shadow: 5px 5px 115px -14px black;
     border-radius: 4px;
-    background-image: linear-gradient(
-        rgba(22, 12, 46, 0.95),
-        rgba(73, 66, 92, 0.95)
-      ),
+    background-image: 
+    linear-gradient(
+      rgba(22, 12, 46, 0.95),
+      rgba(73, 66, 92, 0.95)
+    ),
       url('img/capstone-meal.jpg');
   }
 
