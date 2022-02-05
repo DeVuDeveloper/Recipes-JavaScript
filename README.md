@@ -1,7 +1,13 @@
 # Capstone 2 Javascript
 ## Fish recipes
 
-Live preview [here](https://vudej.github.io/Capstone-2-JavaScript/dist/). 
+## Live preview [here](https://vudej.github.io/Capstone-2-JavaScript/dist/). 
+
+##  Video
+
+Quick review of page amd code.
+[video link](https://drive.google.com/drive/u/0/folders/1C0FNMW0G4Pz6nbGOo2LsWOHNexgSbzxa)
+
 
 ## Screenshots
 ![Example screenshot](img/screenshot.png)

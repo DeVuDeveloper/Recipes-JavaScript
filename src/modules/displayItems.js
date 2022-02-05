@@ -31,10 +31,10 @@ const list = (meals) => {
     heart.classList.add('far', 'fa-heart', 'like');
     heart.id = meal.idMeal;
     mealTitle.appendChild(heart);
-    const likes = document.createElement('li');
-    likes.classList.add('likeCounter');
-    likes.innerHTML = 'O likes';
-    ul.appendChild(likes);
+    const likesNumber = document.createElement('li');
+    likesNumber.classList.add('likeCounter');
+    likesNumber.innerHTML = 'O likes';
+    ul.appendChild(likesNumber);
     const commentBtn = document.createElement('li');
     ul.appendChild(commentBtn);
     const anchor = document.createElement('a');
@@ -53,14 +53,14 @@ const list = (meals) => {
     });
 
     const likesData = await getLikesFromAPI();
-    const showLikes = (likesData, likes) => {
-      likesData.forEach((meal) => {
-        if (meal.item_id === heart.id) {
-          likes.innerHTML = `${meal.likes} likes `;
+    const showLikes = (likesData, likesNumber) => {
+      likesData.forEach((likeProp) => {
+        if (likeProp.item_id === heart.id) {
+          likesNumber.innerHTML = `${likeProp.likes} likes `;
         }
       });
     };
-    showLikes(likesData, likes);
+    showLikes(likesData, likesNumber);
 
     heart.addEventListener('click', async () => {
       await addLikeToAPI(heart.id);
@@ -70,7 +70,7 @@ const list = (meals) => {
       }, 2000);
 
       const likeComing = await getLikesFromAPI();
-      showLikes(likeComing, likes);
+      showLikes(likeComing, likesNumber);
     });
   });
 

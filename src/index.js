@@ -17,9 +17,6 @@ const Footer = () => {
 };
 
 Footer();
-window.onload = async () => {
-  list(await getDataFromAPI());
-};
 
 const { luxon } = window;
 const date = document.querySelector('.date');
