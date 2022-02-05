@@ -72,32 +72,40 @@ const popUp = async ([meal]) => {
   closeButton.addEventListener('click', () => {
     popUpContainer.classList.remove('pop');
     mainPopUp.style.display = 'none';
+    const navbar = document.querySelector('.navbar');
+    navbar.classList.remove('hide');
   });
 
   const addComment = (el) => {
     const comments = document.createElement('li');
     comments.classList.add('.comment');
-    comments.innerHTML = `<span class="white">${el.creationDate}</span> <span class="white">${el.username} :</span> <span class="white">${el.comment}</span>`;
+    comments.innerHTML = `<span class='white'>${el.creation_date}</span> <span class='white'>${el.username}:</span> <span class='white'>${el.comment}</span>`;
     displayComments.appendChild(comments);
   };
 
-  btn.addEventListener('click', async () => {
-    const date = new Date();
-    const creationDate = date.toISOString().split('T')[0];
+  const commentList = await getCommentsFromAPI(meal.idMeal);
+  let counter = commentCounter(commentList);
+  commentNumber.innerHTML = `Comments (${counter})`;
+
+  btn.addEventListener('click', async (e) => {
+    e.preventDefault();
     const userName = input.value;
     const userComment = textArea.value;
-    addComment({ creationDate, comment: userComment, username: userName });
+    counter += 1;
+    commentNumber.innerHTML = `Comments (${counter})`;
+    const date = new Date();
+    const creationDate = date.toISOString().split('T')[0];
+    addComment({
+      creation_date: creationDate,
+      comment: userComment,
+      username: userName,
+    });
     form.reset();
     await setCommentsToAPI(meal.idMeal, userName, userComment);
-    const commentList = await getCommentsFromAPI(meal.idMeal);
-    commentList.forEach((element) => {
-      const counter = commentCounter(commentList);
-      if (element.length === userName) {
-        addComment(element);
-      }
-      commentNumber.innerHTML = `Comments (${counter})`;
-      setCommentsToAPI(meal.idMeal, userName, userComment).clear();
-    });
+  });
+
+  commentList.forEach((element) => {
+    addComment(element);
   });
 };
 
