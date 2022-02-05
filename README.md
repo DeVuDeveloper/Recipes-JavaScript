@@ -5,7 +5,7 @@
 
 ##  Video
 
-Quick review of page amd code.
+Quick review of page and code.
 [video link](https://drive.google.com/drive/u/0/folders/1C0FNMW0G4Pz6nbGOo2LsWOHNexgSbzxa)
 
 
