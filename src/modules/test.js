@@ -15,6 +15,6 @@ describe('Checking if right data fetched from API', () => {
 
   test('if it is right id', () => {
     const receivedData = mockJsonFromAPI;
-    expect(receivedData[25].idMeal).toBe('52975');
+    expect(receivedData[25].idMeal).toBe(52975);
   });
 });

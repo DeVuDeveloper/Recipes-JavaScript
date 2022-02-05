@@ -6,7 +6,7 @@
 ##  Video
 
 Quick review of page amd code.
-[video link](https://drive.google.com/drive/u/0/folders/1C0FNMW0G4Pz6nbGOo2LsWOHNexgSbzxa)
+[video link](https://drive.google.com/file/d/1rddGpKvrW6znvf1dJ-pU_T2VqdC4jjld/view?usp=sharing)
 
 
 ## Screenshots
@@ -33,6 +33,7 @@ Project is created with:
 To run this project, install it locally using:
 - cd Desktop
 - git clone https://github.com/VuDej/Capstone-2-JavaScript.git
+- cd Capstone-2-JavaScript
 - npm install
 - npm start 
 

@@ -1,6 +1,6 @@
 const setCommentsToAPI = async (idMeal, userName, userComment) => {
   fetch(
-    'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Vndo6TmrXVAk8EneIclU/comments',
+    'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ctkHUNgZItfXBWAQsE4f/comments',
     {
       method: 'POST',
       headers: {
@@ -19,7 +19,7 @@ const setCommentsToAPI = async (idMeal, userName, userComment) => {
 
 const getCommentsFromAPI = async (idMeal) => {
   const response = await fetch(
-    `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Vndo6TmrXVAk8EneIclU
+    `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ctkHUNgZItfXBWAQsE4f
 
 /comments?item_id=${idMeal}`,
   );

@@ -87,11 +87,13 @@ const popUp = async ([meal]) => {
   let counter = commentCounter(commentList);
   commentNumber.innerHTML = `Comments (${counter})`;
 
-  btn.addEventListener('click', async (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const userName = input.value;
-    const userComment = textArea.value;
+    const userComment = textArea.value; 
+
     counter += 1;
+
     commentNumber.innerHTML = `Comments (${counter})`;
     const date = new Date();
     const creationDate = date.toISOString().split('T')[0];
