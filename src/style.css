@@ -299,7 +299,7 @@ form {
 
 input {
   padding-left: 10px;
-  color: bisque;
+  color: rgb(82, 81, 80);
   background-color: rgb(233, 224, 224);
   width: 400px;
   height: 40px;
@@ -309,7 +309,7 @@ input {
 
 textarea {
   padding-left: 10px;
-  color: bisque;
+  color: rgb(73, 72, 70);
   background-color: rgb(236, 232, 232);
   width: 400px;
   border-radius: 5px;

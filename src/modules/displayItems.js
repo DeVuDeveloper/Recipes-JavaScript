@@ -51,6 +51,7 @@ const list = (meals) => {
       const navbar = document.querySelector('.navbar');
       navbar.classList.add('hide');
     });
+
     const likesData = await getLikesFromAPI();
     const showLikes = (likesData, likes) => {
       likesData.forEach((meal) => {
