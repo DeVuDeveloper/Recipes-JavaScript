@@ -1,6 +1,6 @@
 const commentCounter = (item) => {
   if (item.length) {
-    item.length;
+    return item.length;
   } else {
     return 0;
   }
