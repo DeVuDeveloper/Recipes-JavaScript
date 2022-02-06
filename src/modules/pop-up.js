@@ -30,7 +30,7 @@ const popUp = async ([meal]) => {
   const li3 = document.createElement('li');
   li.innerHTML = `<span class="meal-details1">Category</span> : ${meal.strCategory}`;
   li.classList.add('meal-details');
-  li2.innerHTML = `<span class="meal-details1">Origin</span> : ${meal.idMeal}`;
+  li2.innerHTML = `<span class="meal-details1">Origin</span> : ${meal.strArea}`;
   li2.classList.add('meal-details');
   li3.innerHTML = `<span class="meal-details1">Recipe</span> : ${meal.strInstructions}`;
   li3.classList.add('meal-details');
