@@ -1,5 +1,4 @@
 import { setCommentsToAPI, getCommentsFromAPI } from './involvementkeys.js';
-import commentCounter from './commentCounter.js';
 
 const mainPopUp = document.querySelector('.main-pop-up');
 const popUpContainer = document.querySelector('.pop-up-container');
@@ -31,7 +30,7 @@ const popUp = async ([meal]) => {
   const li3 = document.createElement('li');
   li.innerHTML = `<span class="meal-details1">Category</span> : ${meal.strCategory}`;
   li.classList.add('meal-details');
-  li2.innerHTML = `<span class="meal-details1">Origin</span> : ${meal.strArea}`;
+  li2.innerHTML = `<span class="meal-details1">Origin</span> : ${meal.idMeal}`;
   li2.classList.add('meal-details');
   li3.innerHTML = `<span class="meal-details1">Recipe</span> : ${meal.strInstructions}`;
   li3.classList.add('meal-details');
@@ -59,7 +58,7 @@ const popUp = async ([meal]) => {
   input.id = 'username';
   const textArea = document.createElement('textarea');
   textArea.placeholder = 'Your insight';
-  textArea.id = 'usercomment';
+  textArea.id = 'userComment';
   form.appendChild(input);
   form.appendChild(textArea);
   const btn = document.createElement('button');
@@ -76,37 +75,23 @@ const popUp = async ([meal]) => {
     navbar.classList.remove('hide');
   });
 
-  const addComment = (el) => {
-    const comments = document.createElement('li');
-    comments.classList.add('.comment');
-    comments.innerHTML = `<span class='white'>${el.creation_date}</span> <span class='white'>${el.username}:</span> <span class='white'>${el.comment}</span>`;
-    displayComments.appendChild(comments);
-  };
+  btn.addEventListener('click', () => {
+    const username = document.querySelector('#username').value;
+    const comment = document.querySelector('#userComment').value;
+    const commentId = meal.idMeal;
+    const newComment = {
+      item_id: commentId,
+      username,
+      comment,
+    };
 
-  const commentList = await getCommentsFromAPI(meal.idMeal);
-  let counter = commentCounter(commentList);
-  commentNumber.innerHTML = `Comments (${counter})`;
-
-  btn.addEventListener('click', async (e) => {
-    e.preventDefault();
-    const userName = input.value;
-    const userComment = textArea.value;
-    counter += 1;
-    commentNumber.innerHTML = `Comments (${counter})`;
-    const date = new Date();
-    const creationDate = date.toISOString().split('T')[0];
-    addComment({
-      creation_date: creationDate,
-      comment: userComment,
-      username: userName,
-    });
+    setCommentsToAPI(newComment);
     form.reset();
-    await setCommentsToAPI(meal.idMeal, userName, userComment);
+    setTimeout(() => {
+      getCommentsFromAPI(meal);
+    }, 500);
   });
-
-  commentList.forEach((element) => {
-    addComment(element);
-  });
+  getCommentsFromAPI(meal);
 };
 
 export default popUp;
