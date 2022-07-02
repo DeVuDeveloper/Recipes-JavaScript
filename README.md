@@ -63,10 +63,6 @@ Feel free to check the [issues page](https://github.com/VuDej/Capstone-2-JavaScr
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
-
-- A special thanks to Microverse.
-
 ## 📝 License
 
 This project is [MIT](LICENSE) licensed.
